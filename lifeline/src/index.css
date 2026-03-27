@@ -13,13 +13,13 @@
   --border-color: rgba(0, 0, 0, 0.08);
   --accent-color: #000000;
 
-  /* Premium Status Colors — Deep Architectural Palette */
-  --p-green: #0a2e1c; /* Deep Forest-clinical green */
-  --p-green-bg: #e6ece8;
-  --p-red: #4a1414; /* Deep Blood-clinical red */
-  --p-red-bg: #f2e8e8;
-  --p-blue: #0d1b2a; /* Deep Midnight-clinical blue */
-  --p-blue-bg: #e8eaec;
+  /* Premium Status Colors — Vibrant but Clinical */
+  --p-green: #059669; /* Vibrant Emerald green */
+  --p-green-bg: #ecfdf5;
+  --p-red: #dc2626; /* Vibrant Red warning */
+  --p-red-bg: #fef2f2;
+  --p-blue: #2563eb; /* Vibrant Indigo-Blue */
+  --p-blue-bg: #eff6ff;
 }
 
 body {
@@ -83,23 +83,23 @@ body {
   transform: translateY(-2px);
 }
 
-/* Premium Tags with Deeper Strokes */
+/* Premium Tags with Vibrant Accents */
 .pt-green {
   color: var(--p-green);
   background-color: var(--p-green-bg);
-  border: 1.25px solid rgba(10, 46, 28, 0.15);
+  border: 1px solid rgba(5, 150, 105, 0.1);
 }
 
 .pt-red {
   color: var(--p-red);
   background-color: var(--p-red-bg);
-  border: 1.25px solid rgba(74, 20, 20, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.1);
 }
 
 .pt-blue {
   color: var(--p-blue);
   background-color: var(--p-blue-bg);
-  border: 1.25px solid rgba(13, 27, 42, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 .pt-base {
