@@ -256,9 +256,22 @@ export default function App() {
                   <p className={`max-w-[320px] text-[13px] leading-relaxed font-light transition-all duration-1000 ${hoveredId === p.id ? 'text-white/70 translate-x-0' : 'text-white/30 -translate-x-2'}`}>
                     {p.desc}
                   </p>
-                  <div className={`w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-700 ${hoveredId === p.id ? 'border-white/30 bg-white text-black scale-110' : 'text-white/20'}`}>
-                    <Plus className={`w-3 h-3 transition-transform duration-700 ${hoveredId === p.id ? 'rotate-90' : 'rotate-0'}`} />
-                  </div>
+                  {p.name === 'Lifeline' ? (
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        // In a real app, this would be a router link
+                        alert("To view Lifeline, run: cd lifeline && npm install && npm run dev");
+                      }}
+                      className={`h-10 px-6 bg-white text-black font-bold text-[8px] tracking-[0.2em] uppercase rounded-full transition-all duration-700 ${hoveredId === p.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                    >
+                      Visit Engine
+                    </button>
+                  ) : (
+                    <div className={`w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-700 ${hoveredId === p.id ? 'border-white/30 bg-white text-black scale-110' : 'text-white/20'}`}>
+                      <Plus className={`w-3 h-3 transition-transform duration-700 ${hoveredId === p.id ? 'rotate-90' : 'rotate-0'}`} />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
