@@ -79,24 +79,24 @@ const SectionHeader = ({ id, label, title, desc }) => (
 // --- Content Data ---
 
 const DRUGS = [
-  { id: '01', name: 'Neuro-Stabilizer A1', category: 'Cognitive', status: 'Approved', info: 'Bilateral neurological stabilization for high-stress cognitive environments and clinical optimization.' },
-  { id: '02', name: 'Cellular-Revive Pro', category: 'Regenerative', status: 'Stage III', info: 'Mitochondrial acceleration designed for rapid cellular restoration and tissue recovery post-trauma.' },
-  { id: '03', name: 'Vascular-Boost+', category: 'Cardio', status: 'Clinical', info: 'Synthetic endothelial enhancement protocols optimized for low-friction cardiovascular performance.' },
-  { id: '04', name: 'Immuno-Shield X', category: 'Biodefense', status: 'Phase I', info: 'Adaptive T-cell reprogramming architecture providing enhanced immunity against novel biological pathogens.' },
+  { id: '01', name: 'Neuro-Stabilizer A1', category: 'Cognitive', status: 'Approved', type: 'green', info: 'Bilateral neurological stabilization for high-stress cognitive environments and clinical optimization.' },
+  { id: '02', name: 'Cellular-Revive Pro', category: 'Regenerative', status: 'Stage III', type: 'blue', info: 'Mitochondrial acceleration designed for rapid cellular restoration and tissue recovery post-trauma.' },
+  { id: '03', name: 'Vascular-Boost+', category: 'Cardio', status: 'Clinical', type: 'blue', info: 'Synthetic endothelial enhancement protocols optimized for low-friction cardiovascular performance.' },
+  { id: '04', name: 'Immuno-Shield X', category: 'Biodefense', status: 'Critical', type: 'red', info: 'Adaptive T-cell reprogramming architecture providing enhanced immunity against novel biological pathogens.' },
 ];
 
 const PLACES = [
-  { name: 'Zurich Bio-Hub', location: 'Switzerland', type: 'Production', distance: '4km', status: 'Online' },
-  { name: 'Singapore Research Arch', location: 'Singapore', type: 'Laboratory', distance: '2.5km', status: 'Active' },
-  { name: 'Palo Alto Center', location: 'California, USA', type: 'Distribution', distance: '0.8km', status: 'Online' },
-  { name: 'Tokyo Quantum Pharma', location: 'Japan', type: 'R&D', distance: '12km', status: 'Locked' },
+  { name: 'Zurich Bio-Hub', location: 'Switzerland', type: 'Production', distance: '4km', status: 'Online', color: 'green' },
+  { name: 'Singapore Research Arch', location: 'Singapore', type: 'Laboratory', distance: '2.5km', status: 'Active', color: 'green' },
+  { name: 'Palo Alto Center', location: 'California, USA', type: 'Distribution', distance: '0.8km', status: 'Online', color: 'green' },
+  { name: 'Tokyo Quantum Pharma', location: 'Japan', type: 'R&D', distance: '12km', status: 'Locked', color: 'red' },
 ];
 
 const RESEARCH_AREAS = [
-  { title: 'Neural Plasticity Modeling', leads: 'Dr. Sarah Chen', progress: 78, area: 'Neuroscience', priority: 'High' },
-  { title: 'Bio-Digital Interface', leads: 'Architect Team Alpha', progress: 42, area: 'Cybernetics', priority: 'Medium' },
-  { title: 'Nanoscale Delivery Systems', leads: 'Stanford Lab B-1', progress: 91, area: 'Nanotech', priority: 'Critical' },
-  { title: 'Predictive Genomics', leads: 'Helsinki Institute', progress: 65, area: 'Genetics', priority: 'Standard' },
+  { title: 'Neural Plasticity Modeling', leads: 'Dr. Sarah Chen', progress: 78, area: 'Neuroscience', priority: 'High', type: 'blue' },
+  { title: 'Bio-Digital Interface', leads: 'Architect Team Alpha', progress: 42, area: 'Cybernetics', priority: 'Medium', type: 'blue' },
+  { title: 'Nanoscale Delivery Systems', leads: 'Stanford Lab B-1', progress: 91, area: 'Nanotech', priority: 'Critical', type: 'red' },
+  { title: 'Predictive Genomics', leads: 'Helsinki Institute', progress: 65, area: 'Genetics', priority: 'Standard', type: 'blue' },
 ];
 
 // --- Main App ---
@@ -180,19 +180,19 @@ export default function App() {
                   <div className="flex items-center justify-between mb-8">
                     <span className="text-[10px] font-mono font-medium tracking-widest text-black/30 uppercase">Sys_Status</span>
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[9px] font-medium text-emerald-600/70 uppercase tracking-widest">Active</span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.3)] animate-pulse" />
+                      <span className="text-[9px] font-bold text-[#1a4d33] uppercase tracking-widest">Active</span>
                     </div>
                   </div>
                   <div className="space-y-5">
                     {[
-                      { label: 'Neural Sync', val: '98.2%' },
-                      { label: 'Bio-Telemetry', val: 'Secured' },
-                      { label: 'Encryption', val: 'Quantum' }
+                      { label: 'Neural Sync', val: '98.2%', color: 'green' },
+                      { label: 'Bio-Telemetry', val: 'Secured', color: 'green' },
+                      { label: 'Encryption', val: 'Quantum', color: 'blue' }
                     ].map((stat, i) => (
                       <div key={i} className="flex justify-between items-center border-b border-black/5 pb-3">
                         <span className="text-[11px] text-black/40 font-medium tracking-tight uppercase">{stat.label}</span>
-                        <span className="text-[12px] font-medium tracking-tight text-black">{stat.val}</span>
+                        <span className={`text-[12px] font-bold tracking-tight ${stat.color === 'green' ? 'text-[#1a4d33]' : 'text-[#1e3a5f]'}`}>{stat.val}</span>
                       </div>
                     ))}
                   </div>
@@ -201,7 +201,10 @@ export default function App() {
                 <div className="p-8 bg-black/5 border border-black/5 rounded-[2rem] space-y-8">
                   <div className="flex justify-between items-center">
                     <Stethoscope className="w-6 h-6 text-black/20 stroke-[1.25]" />
-                    <Activity className="w-4 h-4 text-black/30" />
+                    <div className="flex items-center gap-2">
+                      <span className="text-[8px] font-bold text-[#1e3a5f] uppercase tracking-widest">Live Flow</span>
+                      <Activity className="w-4 h-4 text-[#1e3a5f]/40" />
+                    </div>
                   </div>
                   <p className="text-[13px] font-light leading-relaxed text-black/50 tracking-tight">
                     Proprietary monitoring of high-fidelity physiological variables across distributed networks.
@@ -282,8 +285,8 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-12 mt-8 md:mt-0 z-10 w-full md:w-auto justify-between md:justify-end">
                   <div className="flex flex-col items-end">
-                    <span className="text-[9px] font-mono font-medium text-black/25 uppercase tracking-[0.2em] mb-2">Protocol Status</span>
-                    <span className={`text-[10px] font-medium tracking-[0.15em] uppercase px-4 py-1.5 rounded-full border ${drug.status === 'Approved' ? 'border-emerald-500/10 text-emerald-600/80 bg-emerald-50/30' : 'border-black/5 text-black/40 bg-black/5'}`}>
+                    <span className="text-[9px] font-mono font-medium text-black/25 uppercase tracking-[0.2em] mb-3">Protocol Status</span>
+                    <span className={`pt-base ${drug.type === 'green' ? 'pt-green' : drug.type === 'red' ? 'pt-red' : 'pt-blue'}`}>
                       {drug.status}
                     </span>
                   </div>
@@ -314,8 +317,9 @@ export default function App() {
                       <MapPin className="w-5 h-5 text-black/25 group-hover:text-white transition-colors stroke-[1.25]" />
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`text-[9px] font-medium uppercase tracking-widest ${place.status === 'Locked' ? 'text-red-500/60' : 'text-emerald-500/60'}`}>{place.status}</span>
-                      <div className={`w-1 h-1 rounded-full ${place.status === 'Locked' ? 'bg-red-300' : 'bg-emerald-300'}`} />
+                      <span className={`pt-base !px-3 !py-1 !text-[8px] ${place.color === 'green' ? 'pt-green' : 'pt-red'}`}>
+                        {place.status}
+                      </span>
                     </div>
                   </div>
                   <h4 className="text-xl font-light tracking-tight mb-2 text-black">{place.name}</h4>
@@ -346,9 +350,11 @@ export default function App() {
             {RESEARCH_AREAS.map((area, i) => (
               <div key={i} className="p-10 bg-white border border-black/5 rounded-[2.5rem] group hover:shadow-xl hover:shadow-black/5 transition-all duration-1000 relative overflow-hidden premium-card">
                 <div className="absolute top-0 right-0 p-8">
-                   <div className="flex flex-col items-end gap-1.5">
+                   <div className="flex flex-col items-end gap-2">
                      <span className="text-[9px] font-mono font-medium text-black/25 uppercase tracking-widest">Priority</span>
-                     <span className={`text-[9px] font-medium uppercase tracking-widest px-2.5 py-1 rounded-md ${area.priority === 'Critical' ? 'bg-red-50/50 text-red-500/70' : 'bg-black/5 text-black/50'}`}>{area.priority}</span>
+                     <span className={`pt-base !px-3 !py-1 !text-[8px] ${area.priority === 'Critical' ? 'pt-red' : 'pt-blue'}`}>
+                       {area.priority}
+                     </span>
                    </div>
                 </div>
                 
@@ -367,13 +373,15 @@ export default function App() {
                       <span className="text-base font-light text-black/60 italic">{area.leads}</span>
                     </div>
                     <div className="flex flex-col items-end gap-1">
-                      <span className="text-[10px] font-mono font-medium text-black/25 uppercase tracking-widest">Sync</span>
-                      <span className="text-xl font-medium text-black/80">{area.progress}%</span>
+                      <span className="text-[10px] font-mono font-medium text-black/25 uppercase tracking-widest">Sync Efficiency</span>
+                      <span className={`text-xl font-medium ${area.progress > 70 ? 'text-[#1a4d33]' : 'text-[#1e3a5f]'}`}>
+                        {area.progress}%
+                      </span>
                     </div>
                   </div>
                   <div className="w-full h-1 bg-black/5 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-black/80"
+                      className={`h-full ${area.progress > 70 ? 'bg-[#1a4d33]/80' : 'bg-[#1e3a5f]/80'}`}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${area.progress}%` }}
                       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}

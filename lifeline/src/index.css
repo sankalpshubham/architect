@@ -10,17 +10,25 @@
   --text-primary: #111111;
   --text-secondary: #4a4a4a;
   --text-tertiary: #888888;
-  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(0, 0, 0, 0.08);
   --accent-color: #000000;
+
+  /* Premium Status Colors */
+  --p-green: #1a4d33; /* Forest-clinical green */
+  --p-green-bg: #e6f2ec;
+  --p-red: #8b2a2a; /* Deep terracotta red */
+  --p-red-bg: #f8eaea;
+  --p-blue: #1e3a5f; /* Architectural navy blue */
+  --p-blue-bg: #e8eff6;
 }
 
 body {
   margin: 0;
-  letter-spacing: -0.02em; /* Slightly tighter for cleaner look */
+  letter-spacing: -0.02em;
   background: var(--bg-color);
   color: var(--text-primary);
   font-family: 'Geist Sans', sans-serif;
-  font-weight: 300; /* Set a lighter base weight */
+  font-weight: 300;
 }
 
 #root {
@@ -31,7 +39,7 @@ body {
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); }
 
 @keyframes grain {
   0%, 100% { transform: translate(0, 0) }
@@ -54,7 +62,7 @@ body {
   height: 300%;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   background-repeat: repeat;
-  opacity: 0.012;
+  opacity: 0.01;
   pointer-events: none;
   z-index: 9999;
   animation: grain 8s steps(10) infinite;
@@ -70,7 +78,38 @@ body {
 }
 
 .premium-card:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
+}
+
+/* Premium Tags */
+.pt-green {
+  color: var(--p-green);
+  background-color: var(--p-green-bg);
+  border: 1px solid rgba(26, 77, 51, 0.1);
+}
+
+.pt-red {
+  color: var(--p-red);
+  background-color: var(--p-red-bg);
+  border: 1px solid rgba(139, 42, 42, 0.1);
+}
+
+.pt-blue {
+  color: var(--p-blue);
+  background-color: var(--p-blue-bg);
+  border: 1px solid rgba(30, 58, 95, 0.1);
+}
+
+.pt-base {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  line-height: 1;
 }
