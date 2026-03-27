@@ -180,8 +180,8 @@ export default function App() {
                   <div className="flex items-center justify-between mb-8">
                     <span className="text-[10px] font-mono font-medium tracking-widest text-black/30 uppercase">Sys_Status</span>
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.3)] animate-pulse" />
-                      <span className="text-[9px] font-bold text-[#059669] uppercase tracking-widest">Active</span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-700 shadow-[0_0_8px_rgba(22,60,46,0.3)] animate-pulse" />
+                      <span className="text-[9px] font-bold text-[#163c2e] uppercase tracking-widest">Active</span>
                     </div>
                   </div>
                   <div className="space-y-5">
@@ -192,7 +192,7 @@ export default function App() {
                     ].map((stat, i) => (
                       <div key={i} className="flex justify-between items-center border-b border-black/5 pb-3">
                         <span className="text-[11px] text-black/40 font-medium tracking-tight uppercase">{stat.label}</span>
-                        <span className={`text-[12px] font-bold tracking-tight ${stat.color === 'green' ? 'text-[#059669]' : 'text-[#2563eb]'}`}>{stat.val}</span>
+                        <span className={`text-[12px] font-bold tracking-tight ${stat.color === 'green' ? 'text-[#163c2e]' : 'text-[#1c2b4e]'}`}>{stat.val}</span>
                       </div>
                     ))}
                   </div>
@@ -202,8 +202,8 @@ export default function App() {
                   <div className="flex justify-between items-center">
                     <Stethoscope className="w-6 h-6 text-black/20 stroke-[1.25]" />
                     <div className="flex items-center gap-2">
-                      <span className="text-[8px] font-bold text-[#2563eb] uppercase tracking-widest">Live Flow</span>
-                      <Activity className="w-4 h-4 text-[#2563eb]/40" />
+                      <span className="text-[8px] font-bold text-[#1c2b4e] uppercase tracking-widest">Live Flow</span>
+                      <Activity className="w-4 h-4 text-[#1c2b4e]/40" />
                     </div>
                   </div>
                   <p className="text-[13px] font-light leading-relaxed text-black/50 tracking-tight">
@@ -374,14 +374,14 @@ export default function App() {
                     </div>
                     <div className="flex flex-col items-end gap-1">
                       <span className="text-[10px] font-mono font-medium text-black/25 uppercase tracking-widest">Sync Efficiency</span>
-                      <span className={`text-xl font-medium ${area.progress > 70 ? 'text-[#059669]' : 'text-[#2563eb]'}`}>
+                      <span className={`text-xl font-medium ${area.progress > 70 ? 'text-[#163c2e]' : 'text-[#1c2b4e]'}`}>
                         {area.progress}%
                       </span>
                     </div>
                   </div>
                   <div className="w-full h-1 bg-black/5 rounded-full overflow-hidden">
                     <motion.div 
-                      className={`h-full ${area.progress > 70 ? 'bg-[#059669]/80' : 'bg-[#2563eb]/80'}`}
+                      className={`h-full ${area.progress > 70 ? 'bg-[#163c2e]/80' : 'bg-[#1c2b4e]/80'}`}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${area.progress}%` }}
                       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
