@@ -34,14 +34,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'py-4 bg-[#fcfcfc]/95 backdrop-blur-xl border-b border-black/10 shadow-sm' : 'py-8 bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'py-4 bg-white/95 backdrop-blur-xl border-b border-black/10 shadow-sm' : 'py-8 bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2 group cursor-pointer">
             <Activity className="w-6 h-6 text-black stroke-[2] group-hover:scale-110 transition-transform duration-500" />
-            <span className="font-medium text-xl tracking-tighter lowercase text-black">lifeline.</span>
+            <span className="font-semibold text-xl tracking-tighter lowercase text-black">lifeline.</span>
           </div>
-          <div className="hidden md:flex gap-10 text-[11px] font-bold tracking-[0.15em] text-black/40 uppercase">
+          <div className="hidden md:flex gap-10 text-[11px] font-bold tracking-[0.2em] text-black/40 uppercase">
             <a href="#info" className="hover:text-black transition-colors duration-500">Information</a>
             <a href="#drugs" className="hover:text-black transition-colors duration-500">Registry</a>
             <a href="#places" className="hover:text-black transition-colors duration-500">Logistics</a>
@@ -49,11 +49,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-8">
-          <button className="text-[11px] font-bold tracking-[0.15em] text-black/50 uppercase hover:text-black transition-colors duration-500">
+          <button className="text-[11px] font-bold tracking-[0.2em] text-black/50 uppercase hover:text-black transition-colors duration-500">
             Internal Access
           </button>
-          <button className="h-11 px-8 bg-black text-white font-bold text-[10px] tracking-[0.2em] uppercase rounded-full hover:bg-neutral-800 transition-all duration-500 active:scale-95 shadow-lg shadow-black/10">
-            Connect Engine
+          <button className="h-11 px-8 bg-black text-white font-bold text-[10px] tracking-[0.25em] uppercase rounded-full hover:bg-neutral-800 transition-all duration-500 active:scale-95 shadow-lg shadow-black/15">
+            Connect
           </button>
         </div>
       </div>
@@ -65,12 +65,12 @@ const SectionHeader = ({ id, label, title, desc }) => (
   <div id={id} className="mb-24">
     <div className="flex items-center gap-4 mb-8">
       <div className="w-12 h-[2px] bg-black" />
-      <span className="text-[11px] font-mono font-bold tracking-[0.4em] uppercase text-black/70">{label}</span>
+      <span className="text-[11px] font-mono font-bold tracking-[0.45em] uppercase text-black/60">{label}</span>
     </div>
-    <h2 className="text-5xl md:text-6xl font-display font-light tracking-tight mb-10 leading-[1.1] text-black">
+    <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-10 leading-[1.1] text-black">
       {title}
     </h2>
-    <p className="text-xl text-black/60 font-light max-w-2xl leading-relaxed">
+    <p className="text-xl text-black/60 font-light max-w-2xl leading-relaxed tracking-tight">
       {desc}
     </p>
   </div>
@@ -112,7 +112,7 @@ export default function App() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-48 pb-20 overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-black/[0.03] rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-black/[0.02] rounded-full blur-[140px] pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
@@ -125,33 +125,33 @@ export default function App() {
               >
                 <div className="flex items-center gap-4 mb-14">
                   <div className="w-12 h-[2px] bg-black" />
-                  <span className="text-[12px] font-mono font-bold tracking-[0.4em] uppercase text-black">Unified Biometric Protocol</span>
+                  <span className="text-[12px] font-mono font-bold tracking-[0.5em] uppercase text-black">Unified Biometric Protocol</span>
                 </div>
                 
-                <h1 className="text-[70px] md:text-[100px] lg:text-[120px] font-display font-light leading-[0.9] tracking-tight mb-20 text-black">
+                <h1 className="text-[60px] md:text-[80px] lg:text-[100px] font-bold leading-[0.95] tracking-tight mb-20 text-black">
                   Clinical precision <br/>
-                  <span className="italic text-black/40 text-[0.88em]">for biological assets.</span>
+                  <span className="text-black/40">for biological assets.</span>
                 </h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 max-w-5xl">
                   <div className="space-y-6">
-                    <h3 className="text-[12px] font-mono font-bold tracking-[0.2em] uppercase text-black/30">Engine Mission</h3>
-                    <p className="text-xl font-light leading-relaxed text-black/70">
+                    <h3 className="text-[12px] font-mono font-bold tracking-[0.25em] uppercase text-black/30">Engine Mission</h3>
+                    <p className="text-xl font-light leading-relaxed text-black/70 tracking-tight">
                       Lifeline centralizes fragmented medical infrastructure into a single, high-performance interface. We optimize for low-friction decision making in critical clinical environments.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-12">
                     <div className="space-y-4">
-                      <h3 className="text-[12px] font-mono font-bold tracking-[0.2em] uppercase text-black/30">Registry Nodes</h3>
+                      <h3 className="text-[12px] font-mono font-bold tracking-[0.25em] uppercase text-black/30">Registry Nodes</h3>
                       <div className="flex items-baseline gap-2">
-                        <span className="text-5xl font-light tracking-tighter">1,402</span>
+                        <span className="text-5xl font-semibold tracking-tighter">1,402</span>
                         <ArrowUpRight className="w-5 h-5 text-black/20" />
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <h3 className="text-[12px] font-mono font-bold tracking-[0.2em] uppercase text-black/30">Sync Latency</h3>
+                      <h3 className="text-[12px] font-mono font-bold tracking-[0.25em] uppercase text-black/30">Sync Latency</h3>
                       <div className="flex items-baseline gap-2">
-                        <span className="text-5xl font-light tracking-tighter">0.02s</span>
+                        <span className="text-5xl font-semibold tracking-tighter">0.02s</span>
                         <Zap className="w-5 h-5 text-black/20" />
                       </div>
                     </div>
@@ -191,7 +191,7 @@ export default function App() {
                       { label: 'Data Encryption', val: 'Quantum' }
                     ].map((stat, i) => (
                       <div key={i} className="flex justify-between items-center border-b border-black/5 pb-3">
-                        <span className="text-[12px] text-black/50 font-medium tracking-tight uppercase">{stat.label}</span>
+                        <span className="text-[12px] text-black/50 font-bold tracking-tight uppercase">{stat.label}</span>
                         <span className="text-[13px] font-bold tracking-tight text-black">{stat.val}</span>
                       </div>
                     ))}
@@ -203,7 +203,7 @@ export default function App() {
                     <Stethoscope className="w-8 h-8 text-white/40 stroke-[1.5]" />
                     <Activity className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <p className="text-[14px] font-light leading-relaxed text-white/70">
+                  <p className="text-[14px] font-light leading-relaxed text-white/70 tracking-tight">
                     Proprietary monitoring of high-fidelity physiological variables across distributed clinical networks.
                   </p>
                   <div className="pt-4 flex items-center gap-5">
@@ -219,7 +219,7 @@ export default function App() {
         </div>
 
         <div className="absolute bottom-12 left-6 flex items-center gap-6 opacity-40">
-          <div className="text-[10px] font-mono font-bold tracking-[0.4em] uppercase text-black">LIFELINE_CORE // v0.6.0</div>
+          <div className="text-[10px] font-mono font-bold tracking-[0.45em] uppercase text-black">LIFELINE_CORE // v0.6.2</div>
         </div>
       </section>
 
@@ -231,7 +231,7 @@ export default function App() {
           <SectionHeader 
             id="info"
             label="01_Capabilities"
-            title="Medical infrastructure for modern laboratory science."
+            title="Medical infrastructure for modern science."
             desc="We provide a seamless interface between digital architecture and biological imperatives, ensuring zero-latency data flow and institutional trust."
           />
           
@@ -244,13 +244,13 @@ export default function App() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -12 }}
-                className="p-12 premium-card rounded-[3rem] group bg-white"
+                className="p-12 premium-card group bg-white"
               >
                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-10 group-hover:bg-black group-hover:text-white transition-all duration-700">
                   <feature.icon className="w-8 h-8 text-black/30 group-hover:text-white transition-colors duration-700 stroke-[1.5]" />
                 </div>
-                <h3 className="text-2xl font-display font-semibold tracking-tight mb-6 text-black">{feature.title}</h3>
-                <p className="text-[15px] text-black/50 leading-relaxed font-light">{feature.text}</p>
+                <h3 className="text-2xl font-bold tracking-tight mb-6 text-black">{feature.title}</h3>
+                <p className="text-[15px] text-black/50 leading-relaxed font-light tracking-tight">{feature.text}</p>
               </motion.div>
             ))}
           </div>
@@ -276,8 +276,8 @@ export default function App() {
                 <div className="flex items-center gap-12 z-10 w-full md:w-auto">
                   <span className="text-[12px] font-mono font-bold text-black/20 group-hover:text-black transition-colors duration-700">/ {drug.id}</span>
                   <div className="flex flex-col gap-2">
-                    <h4 className="text-3xl font-display font-semibold tracking-tight group-hover:translate-x-3 transition-transform duration-700 text-black">{drug.name}</h4>
-                    <p className="text-[15px] text-black/60 font-light max-w-xl leading-relaxed">{drug.info}</p>
+                    <h4 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-700 text-black">{drug.name}</h4>
+                    <p className="text-[15px] text-black/60 font-light max-w-xl leading-relaxed tracking-tight">{drug.info}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-16 mt-8 md:mt-0 z-10 w-full md:w-auto justify-between md:justify-end">
@@ -318,8 +318,8 @@ export default function App() {
                       <div className={`w-1.5 h-1.5 rounded-full ${place.status === 'Locked' ? 'bg-red-400' : 'bg-emerald-400'}`} />
                     </div>
                   </div>
-                  <h4 className="text-2xl font-display font-bold tracking-tight mb-3 text-black">{place.name}</h4>
-                  <p className="text-[14px] text-black/50 font-light mb-6 leading-relaxed">{place.location}</p>
+                  <h4 className="text-2xl font-bold tracking-tight mb-3 text-black">{place.name}</h4>
+                  <p className="text-[14px] text-black/50 font-light mb-6 leading-relaxed tracking-tight">{place.location}</p>
                 </div>
                 <div className="flex items-center justify-between border-t border-black/5 pt-6 mt-auto">
                   <div className="flex flex-col">
@@ -330,16 +330,6 @@ export default function App() {
                 </div>
               </div>
             ))}
-          </div>
-          
-          <div className="mt-20 p-3 bg-white rounded-full flex items-center max-w-4xl mx-auto border-2 border-black/10 shadow-2xl shadow-black/5 focus-within:border-black transition-all duration-500">
-            <div className="pl-8 text-black/30"><Search className="w-5 h-5" /></div>
-            <input 
-              type="text" 
-              placeholder="Search for regional hubs, chemical registries, or localized laboratories..." 
-              className="flex-1 bg-transparent border-none outline-none px-6 py-4 text-[15px] font-light placeholder:text-black/20 text-black"
-            />
-            <button className="h-14 px-12 bg-black text-white text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-neutral-800 transition-all shadow-xl shadow-black/10 active:scale-95">Find Sector Node</button>
           </div>
         </section>
 
@@ -368,22 +358,22 @@ export default function App() {
                   </div>
                 </div>
 
-                <h4 className="text-4xl font-display font-semibold tracking-tight mb-10 text-black">{area.title}</h4>
+                <h4 className="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-black">{area.title}</h4>
                 
                 <div className="space-y-8">
                   <div className="flex items-end justify-between">
                     <div className="flex flex-col gap-1">
                       <span className="text-[11px] font-mono font-bold text-black/30 uppercase tracking-widest">Lead Investigator</span>
-                      <span className="text-lg font-light text-black/80 italic">{area.leads}</span>
+                      <span className="text-lg font-light text-black/80">{area.leads}</span>
                     </div>
                     <div className="flex flex-col items-end gap-1">
-                      <span className="text-[11px] font-mono font-bold text-black/30 uppercase tracking-widest">Sync Efficiency</span>
+                      <span className="text-[11px] font-mono font-bold text-black/30 uppercase tracking-widest">Efficiency</span>
                       <span className="text-2xl font-bold text-black">{area.progress}%</span>
                     </div>
                   </div>
                   <div className="w-full h-2 bg-black/5 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-black shadow-[0_0_10px_rgba(0,0,0,0.2)]"
+                      className="h-full bg-black shadow-[0_0_10px_rgba(0,0,0,0.1)]"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${area.progress}%` }}
                       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
@@ -393,7 +383,7 @@ export default function App() {
 
                 <div className="mt-14 pt-10 border-t border-black/5 flex justify-between items-center">
                    <button className="text-[11px] font-bold tracking-[0.25em] uppercase flex items-center gap-4 hover:gap-6 transition-all duration-500 text-black group">
-                    Analyze Protocol Data <ArrowRight className="w-4 h-4 text-black/30 group-hover:text-black group-hover:translate-x-1 transition-all" />
+                    Analyze Protocol <ArrowRight className="w-4 h-4 text-black/30 group-hover:text-black group-hover:translate-x-1 transition-all" />
                   </button>
                   <ArrowUpRight className="w-6 h-6 text-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -405,20 +395,20 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="py-32 border-t border-black/10 relative z-10 overflow-hidden bg-white shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.05)]">
+      <footer className="py-32 border-t border-black/10 relative z-10 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-12 gap-16 items-start mb-24">
           <div className="col-span-12 lg:col-span-5 space-y-10">
              <div className="flex items-center gap-3">
                <Activity className="w-8 h-8 text-black stroke-[2]" />
-               <span className="text-2xl font-medium tracking-tighter lowercase text-black">lifeline.</span>
+               <span className="text-2xl font-semibold tracking-tighter lowercase text-black">lifeline.</span>
              </div>
-             <p className="text-lg text-black/50 font-light leading-relaxed max-w-md">
+             <p className="text-lg text-black/50 font-light leading-relaxed max-w-md tracking-tight">
                The global standard for clinical biometric synchronization, pharmacological inventory architecture, and medical-digital infrastructure management.
              </p>
              <div className="flex gap-6">
-               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"><Globe className="w-5 h-5" /></div>
-               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"><Database className="w-5 h-5" /></div>
-               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer"><Shield className="w-5 h-5" /></div>
+               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer shadow-sm"><Globe className="w-5 h-5" /></div>
+               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer shadow-sm"><Database className="w-5 h-5" /></div>
+               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-pointer shadow-sm"><Shield className="w-5 h-5" /></div>
              </div>
           </div>
           
@@ -433,7 +423,7 @@ export default function App() {
                 <h4 className="text-[12px] font-mono font-bold tracking-widest text-black uppercase opacity-30">{col.label}</h4>
                 <ul className="space-y-4">
                   {col.links.map((link, j) => (
-                    <li key={j}><a href="#" className="text-[14px] text-black/60 hover:text-black font-medium transition-colors">{link}</a></li>
+                    <li key={j}><a href="#" className="text-[14px] text-black/60 hover:text-black font-semibold transition-colors">{link}</a></li>
                   ))}
                 </ul>
               </div>
@@ -442,14 +432,10 @@ export default function App() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 pt-16 border-t border-black/10">
-          <div className="text-[11px] font-mono font-bold text-black/30 uppercase tracking-[0.4em]">Global Biometric Standard // ARCH_OS v0.6.2</div>
+          <div className="text-[11px] font-mono font-bold text-black/30 uppercase tracking-[0.45em]">Global Biometric Standard // ARCH_OS v0.7.0</div>
           <div className="text-[10px] font-mono text-black/20 uppercase tracking-widest font-bold">
-            © 2026 Architect Industries. Engineered for Resilience.
+            © 2026 Architect Industries. All Rights Reserved.
           </div>
-        </div>
-        
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[18vw] font-display font-light text-black/[0.015] tracking-tighter select-none pointer-events-none">
-          Lifeline
         </div>
       </footer>
     </div>
